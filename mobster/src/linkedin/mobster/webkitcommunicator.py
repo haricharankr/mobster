@@ -75,6 +75,12 @@ class RemoteWebKitCommunicator(WebSocketClient):
         if cmd == None:
           self.close()
           break
+	print "***************** Request Start ***************"
+	print cmd
+        print "-----------------------"
+	print json.dumps(cmd)
+	print "***************** Request End ***************"
+	
         self.send(json.dumps(cmd))
         log.info('Sent: \n{0}'.format(pformat(cmd)))
 
